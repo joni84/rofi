@@ -1,0 +1,67 @@
+/*
+ * rofi themes - carbonized
+ * colors - carbonized
+ * mode - light
+ */
+
+configuration {
+    modi: "drun";
+    display-drun: "";
+    font: "Rubik 10";
+}
+
+* {
+    bg: #b5b5aa;
+    fg: #2b2b2b;
+    alt: #9e9e95;
+    rad: 7px;
+
+    background-color: @bg;
+    text-color: @fg;
+}
+
+window {
+    width: 40%;
+    y-offset: 1em;
+    location: south;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    padding: 2em 2em 3em;
+    spacing: 1em;
+}
+
+inputbar {
+    children: [ entry ];
+    border-radius: @rad;
+    background-color: @alt;
+}
+
+prompt, entry {
+    vertical-align: 0.5;
+    background-color: @alt;
+}
+
+entry {
+    padding: 2% 3%;
+    placeholder: "Search through apps";
+}
+
+listview {
+    lines: 8;
+    cycle: false;
+}
+
+element {
+    padding: 2% 3%;
+    border-radius: @rad;
+}
+
+element selected, element-text selected {
+    background-color: @fg;
+    text-color: @bg;
+}
+
+listview, element, element-selected, element-text { cursor: pointer; }
+entry { cursor: text; }

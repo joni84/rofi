@@ -1,0 +1,49 @@
+configuration {
+    modi: "drun";
+    display-drun: "";
+    drun-display-format: "{name}";
+    font: "Rubik 10";
+}
+
+* {
+    bg: #eee;
+    bg1: #d5d5d5;
+    fg: #444;
+    rad: 5px;
+
+    background-color: @bg;
+    text-color: @fg;
+}
+
+entry, element { border-radius: @rad; }
+
+mainbox {
+    children: [ inputbar, listview ];
+    padding: 48px;
+    spacing: 1em;
+}
+
+inputbar { children: [ entry ]; }
+
+entry {
+    blink: false;
+    padding: 2%;
+    placeholder: "Search";
+    background-color: @bg1;
+}
+
+listview {
+    lines: 8;
+    columns: 2;
+    cycle: false;
+}
+
+element { padding: 2%; }
+
+element selected, element-text selected {
+    background-color: @fg;
+    text-color: @bg;
+}
+
+element, element-selected, element-text { cursor: pointer; }
+entry { cursor: text; }

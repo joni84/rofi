@@ -1,0 +1,79 @@
+/*
+ * rofi themes - print
+ * colors - picked from chromium browser
+ * mode - light
+ */
+
+configuration {
+    modi: "drun";
+    font: "Rubik 10";
+    display-drun: "";
+}
+
+* {
+    bg: #fff;
+    fg: #3c4043;
+    alt: #dee1e6;
+    rad: 12px;
+    bw: 2px;
+
+    background-color: @bg;
+    text-color: @fg;
+}
+
+window {
+    border: @bw;
+    border-color: @fg;
+    border-radius: @rad;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    padding: 2.5em;
+    spacing: 1em;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    spacing: 1%;
+}
+
+prompt {
+    padding: 0 1%;
+    border-radius: @rad;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    background-color: @alt;
+    border: @bw;
+    border-color: @fg;
+    border-radius: @rad;
+    font: "feather 17";
+}
+
+entry {
+    padding: 2% 3%;
+    placeholder: "Search through apps";
+    border: @bw;
+    border-color: @fg;
+    border-radius: @rad;
+    background-color: @alt;
+}
+
+listview {
+    lines: 6;
+    cycle: false;
+}
+
+element {
+    padding: 2% 3%;
+    border-radius: @rad;
+}
+
+element selected, element-text selected {
+    background-color: @fg;
+    text-color: @bg;
+}
+
+element-text { vertical-align: 0.5; }
+listview, element, element-selected, element-text { cursor: pointer; }
+entry { cursor: text; }

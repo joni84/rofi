@@ -1,0 +1,73 @@
+/*
+ * rofi themes - default
+ * colors - jellybeans
+ * mode - dark
+ */
+
+configuration {
+    modi: "drun";
+    display-drun: "";
+    drun-display-format: "{name}";
+    font: "Rubik 10";
+    show-icons: true;
+    icon-theme: "Reversal-dark";
+}
+
+* {
+    bg: #151515;
+    fg: #e8e8d3;
+    alt: #1c1c1c;
+    rad: 8px;
+
+    background-color: @bg;
+    text-color: @fg;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    padding: 3em;
+    spacing: 1em;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    border-radius: @rad;
+    background-color: @alt;
+}
+
+prompt, entry, element selected {
+    vertical-align: 0.5;
+    background-color: @alt;
+}
+
+prompt {
+   padding: 1.5%;
+   font: "feather 14";
+}
+
+entry {
+    blink: false;
+    padding: 0 1.5% 0 0;
+    placeholder: "Search through apps";
+}
+
+listview {
+    lines: 3;
+    columns: 4;
+    cycle: false;
+}
+
+element {
+    orientation: vertical;
+    padding: 1em;
+    border-radius: @rad;
+}
+
+element-text, element-icon {
+    horizontal-align: 0.5;
+    background-color: inherit;
+}
+
+element-icon { size: 48px; }
+listview, element, element selected, element-text, element-icon { cursor: pointer; }
+entry { cursor: text; }

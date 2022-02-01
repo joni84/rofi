@@ -1,0 +1,75 @@
+/*
+ * rofi themes - pfp
+ * colors - custom
+ * mode - light
+ */
+
+configuration {
+    modi: "drun";
+    display-drun: "";
+    font: "Rubik 10";
+}
+
+* {
+    bg: #f8f9f7;
+    fg: #372d2f;
+    alt: #c2c7be;
+
+    background-color: @bg;
+    text-color: @fg;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    layout: horizontal;
+    spacing: 2%;
+}
+
+inputbar {
+    children: [ pfp, entry ];
+    padding: 64px 64px 0 64px;
+    spacing: 64px;
+    background-image: url("img/banner.png", width);
+    text-color: @fg;
+}
+
+pfp {
+    width: 110px;
+    expand: false;
+    padding: 50px;
+    border: 5px;
+    border-color: @bg;
+    background-image: url("img/pfp.png", height);
+}
+
+entry {
+    padding: 10px 2%;
+    margin: 29px 0;
+    placeholder: "Search";
+    vertical-align: 0.5;
+    border: 5px;
+    border-color: @bg;
+    background-color: @fg;
+    text-color: @bg;
+}
+
+listview {
+    lines: 4;
+    columns: 2;
+    cycle: false;
+    padding: 16px 32px 32px;
+}
+
+element {
+    orientation: vertical;
+    padding: 1.5% 0%;
+}
+
+element-text {
+    margin: 0.5% 3%;
+    vertical-align: 0.5;
+}
+
+element selected, element-text selected { background-color: @alt; }
+listview, element, element-selected, element-text { cursor: pointer; }
+entry { cursor: text; }

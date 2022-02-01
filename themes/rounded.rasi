@@ -1,0 +1,127 @@
+/*
+ * rofi themes - rounded
+ * colors - picked from chromium web browser
+ * mode - light
+ */
+
+configuration {
+    modi: "drun";
+    display-drun: "Apps";
+    display-run: "";
+    drun-display-format: "{name}";
+    font: "Rubik 10";
+}
+
+* {
+    bg: #ffffff;
+    fg:	#3c4043;
+    alt: #dee1e6;
+    rad: 12px;
+
+    background-color: @bg;
+    text-color:	@fg;
+}
+
+window {
+    children: [ container, mainbox ];
+    padding: 20px 0 0;
+    border-radius: @rad;
+    background-color: @fg;
+}
+
+container {
+    children: [ box, mode-switcher, box1 ];
+    orientation: horizontal;
+    expand: false;
+    background-image: linear-gradient(to bottom, 
+                      #3c4043, #3c4043, #3c4043, #3c4043, 
+                      #ffffff, #ffffff, #ffffff, #ffffff);
+}
+
+box {
+    expand: false;
+    padding: 0 2% 0;
+    margin: 0 -2px 0 0;
+    border-radius: 0 0 12px 0;
+    background-color: @fg;
+}
+
+box1 {
+    expand: true;
+    margin: 0 0 0 -2px;
+    border-radius: 0 0 0 12px;
+    background-color: @fg;
+}
+
+mode-switcher { background-color: @fg; }
+
+button {
+    padding: 2% 14% 2% 3%;
+    border-radius: 0 0 0 12px;
+    background-color: @fg;
+    text-color: @bg;
+}
+
+button selected {
+    border-radius: 12px 12px 0 0;
+    background-color: @bg;
+    text-color: @fg;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    margin: -2px 0 0;
+    spacing: 2%;
+    border-radius: @rad;
+}
+
+inputbar {
+    children: [ textbox, entry ];
+    expand: false;
+    margin: 20px 20px 0;
+    border-radius: @rad;
+    background-color: @alt;
+}
+
+textbox {
+    str: "";
+    expand: false;
+    padding: 0 1% 0;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    border-radius: @rad;
+    background-color: @fg;
+    text-color: @bg;
+    font: "feather 17";
+}
+
+entry {
+    expand: true;
+    padding: 2%;
+    placeholder: "Search";
+    border-radius: @rad;
+    background-color: @alt;
+}
+
+listview {
+    columns: 2;
+    lines: 4;
+    cycle: false;
+    layout: vertical;
+    margin: 0 20px 20px;
+}
+
+element {
+    orientation: vertical;
+    border-radius: @rad;
+    padding: 2% 3%;
+}
+
+element selected, element-text selected {
+    background-color: @fg;
+    text-color: @bg;
+}
+
+element-text { vertical-align: 0.5; }
+listview, element, element selected, element-text { cursor: pointer; }
+entry { cursor: text; }
